@@ -1,0 +1,51 @@
+p {
+  font-family: Lato;
+  font-size: 60px;
+}
+
+.sidebar {
+  background: #efefef;
+  padding: 10px;
+}
+
+.page {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+mat-form-field,
+mat-checkbox {
+  display: block;
+  width: 100%;
+}
+
+mat-checkbox {
+  margin-bottom: 10px;
+}
+
+.button {
+  margin: 50px;
+}
+
+/* Apply styles to the node label */
+.ngx-graph-node-label {
+  fill: #fff; /* Set node label color */
+  font-size: 26px; /* Increase the font size */
+  text-anchor: middle;
+  pointer-events: none;
+}
+/* Apply default styles to the link elements */
+.ngx-graph-link {
+  stroke: #bdbdbd; /* Set default link color */
+  stroke-width: 100px; /* Set default link width */
+  opacity: 0.3; /* Set default link opacity */
+}
+
+/* Apply styles to the link elements when a node is clicked */
+.ngx-graph-node.clicked + .ngx-graph-link,
+.ngx-graph-link.clicked {
+  stroke: #bdbdbd; /* Set clicked link color */
+  stroke-width: 20px; /* Set clicked link width */
+  opacity: 1; /* Set clicked link opacity */
+}

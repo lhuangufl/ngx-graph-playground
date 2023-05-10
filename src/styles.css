@@ -1,0 +1,58 @@
+/* Import Angular Material theme */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/* Apply styles to the container element */
+.graph-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Apply styles to the ngx-graph component */
+.ngx-graph {
+  width: 100%;
+  height: 100%;
+}
+
+/* Apply styles to the node elements */
+.ngx-graph-node {
+  fill: #42a5f5; /* Set node fill color */
+  stroke: #1e88e5; /* Set node border color */
+}
+
+/* Apply styles to the node label */
+.ngx-graph-node-label {
+  fill: #fff; /* Set node label color */
+  font-size: 40px;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+/* Apply styles to the link elements */
+.ngx-graph-link {
+  stroke: #bdbdbd; /* Set link color */
+  stroke-width: 1.5px;
+}
+
+/* Apply styles to the link label */
+.ngx-graph-link-label {
+  fill: #000; /* Set link label color */
+  font-size: 10px;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+/* Apply styles to the cluster elements */
+.ngx-graph-cluster-node {
+  fill: #ffc107; /* Set cluster fill color */
+  stroke: #ff9800; /* Set cluster border color */
+}
+
+/* Apply styles to the cluster label */
+.ngx-graph-cluster-label {
+  fill: #000; /* Set cluster label color */
+  font-size: 12px;
+  text-anchor: middle;
+  pointer-events: none;
+}
