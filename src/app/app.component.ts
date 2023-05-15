@@ -4,19 +4,32 @@ import { Edge, Node, ClusterNode, Layout } from '@swimlane/ngx-graph';
 import { nodes, clusters, links } from './data';
 import { Subject } from 'rxjs';
 
+interface CustomNode extends Node {
+  highlighted: boolean;
+}
+
+interface CustomEdge extends Edge {
+  highlighted: boolean;
+}
+
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.scss' ]
 })
+
 export class AppComponent implements OnInit {
   name = 'NGX-Graph Demo';
 
   nodes: Node[] = nodes;
   clusters: ClusterNode[] = clusters;
 
+  nodes: CustomNode[] = nodes.map((node) => ({ ...node, highlighted: false }));
+  links: CustomEdge[] = links.map((link) => ({ ...link, highlighted: false }));
+
+
   links: Edge[] = links;
-  
+
   layout: String | Layout = 'dagreCluster';
   layouts: any[] = [
     {
@@ -54,7 +67,7 @@ export class AppComponent implements OnInit {
     'Step',
     'Step After',
     'Step Before'
-  ];  
+  ];
 
   draggingEnabled: boolean = true;
   panningEnabled: boolean = true;
@@ -66,7 +79,7 @@ export class AppComponent implements OnInit {
   panOnZoom: boolean = true;
 
   autoZoom: boolean = false;
-  autoCenter: boolean = false; 
+  autoCenter: boolean = false;
 
   update$: Subject<boolean> = new Subject();
   center$: Subject<boolean> = new Subject();
@@ -75,7 +88,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.setInterpolationType(this.curveType);
   }
-   
+
   setInterpolationType(curveType) {
     this.curveType = curveType;
     if (curveType === 'Bundle') {
